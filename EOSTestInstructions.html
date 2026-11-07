@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instructions</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: #e0e0e0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.instructions-box {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    height: 600px;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.instructions-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.instructions-box::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+.instructions-box::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 5px;
+}
+
+.instructions-box::-webkit-scrollbar-thumb:hover {
+    background: #4da6ff;
+}
+
+.instruction {
+    margin: 15px 0;
+    color: #bbbbbb;
+    line-height: 1.5;
+}
+
+.instruction-number {
+    color: #4da6ff;
+    margin-right: 8px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Instructions</h1>
+
+    <div class="instructions-box">
+
+        <div class="instruction">
+            <span class="instruction-number">1.</span>
+            1. Setting Up Epic Online Services and Obtaining API Keys
+You'll need these keys to access the Services! If you have them already, then ignore this step
+
+Login to the Epic Games Dev Portal with an Epic Games Account
+Create a new Product
+Go to Product Settings -> Scroll down to clients -> Add a new Client
+Add a new Client Policy -> Name your Client Policy -> Set the Client Policy Type to Custom, enable Connect and Sessions and all of the sub policy things, then Save & Exit
+Add a new Client -> Name your Client -> Set the Client Policy to the Client Policy you just created, then Save & Exit (if you want to use the epic login, use http://127.0.0.1 for the redirect URL)
+Go to Epic Online Services -> Account Social -> Epic Account Service -> Create Application
+Permissions -> Select which one you like (or just set to all) -> Save changes
+Linked clients -> Select client -> Save changes
+Go to "Project Settings" -> Scroll down to your IDs
+Copy and paste all of your credentials into the EOS API Key Asset once your project is set up
+Use the "LIVE" sandbox and deployment IDs
+Do NOT use the DEV or STAGE! It will NOT work
+        </div>
+
+        <div class="instruction">
+            <span class="instruction-number">2.</span>
+            Rewrite the EOS API Key
+Fill out all the SDK keys on the EOS API Key Asset, you can find them in the Epic Online Services Dev Portal (SDK -> SDK Credentials -> Get Credentials)
+        </div>
+
+        <div class="instruction">
+            <span class="instruction-number">3.</span>
+            Building for Android
+Install the Android Module through Unity Hub
+In File -> Build Settings, switch platform to Android
+In Unity -> Edit -> Project Settings... -> Player -> Android -> Other Settings -> Identification set Minimum API Level to Android 6.0 'Marshmallow' (API Level 23) as required by the EOS Android SDK
+(Optional) Install Android Logcat through Package Manager to see logs when running on Android device over USB (Window -> Package Manager -> Packages: Unity Registry -> Android Logcat -> Install) then open with Alt+6 or Window -> Analysis -> Android Logcat
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
